@@ -11,6 +11,9 @@ export class HeroesComponent implements OnInit {
 
 heroes: Hero[] = [];
 
+/*   heroForm: Hero;
+  id: number;
+  name: string; */
 
   constructor(private heroService: HeroService) { 
 
@@ -18,6 +21,7 @@ heroes: Hero[] = [];
 
   ngOnInit(): void {
     this.getHeroes();
+ /*    this.heroForm = new Hero(); */
   }
 
 

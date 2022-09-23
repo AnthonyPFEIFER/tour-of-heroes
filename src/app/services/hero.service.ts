@@ -5,7 +5,6 @@ import { catchError, tap } from 'rxjs/operators';
 
 import { Hero } from 'src/app/interfaces/hero';
 import { MessageService } from './message.service';
-import { GetResponse } from '../interfaces/getResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -23,16 +22,10 @@ export class HeroService {
     this.messageService.add(`HeroService: ${message}`);
   }
 
-/*   getHeroes(): Observable<Hero[]> {
-    return this.http.get<Hero[]>(this.heroesUrl).pipe(
-      tap(_ => this.log("Fetched heroes")),
-      catchError(this.handleError<Hero[]>('getHeroes', []))
-    );
-  } */
+
   getHeroes (): Observable<Hero[]> {
-    return this.http.get<GetResponse>(this.heroesUrl)
+    return this.http.get<Hero[]>(this.heroesUrl)
       .pipe(
-        map(response => response._embedded.heroes),
         tap(heroes => this.log(`fetched heroes`)),
         catchError(this.handleError('getHeroes', []))
       );
