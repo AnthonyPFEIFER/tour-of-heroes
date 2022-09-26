@@ -1,5 +1,5 @@
 <h2> Mes héros </h2>
-<div>
+<!-- <div>
     <label for ="new-hero"> Hero's name : </label>
     <input id="new-hero" #heroName />
 
@@ -7,6 +7,18 @@
         Add a Hero
     </button>
 </div>
+ -->
+
+ <form #validationHero="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="name">Veuillez saisir un nom de héros. </label>
+        <input type="text" class="form-control" id="name" name="name" required
+            [(ngModel)]="heroForm.name" #name="ngModel">
+    </div>
+    <div>
+        <input id="submitBtn" type="submit" [disabled]="!validationHero.valid">
+    </div>
+ </form>
 
 
 <ul class="heroes">

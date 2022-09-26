@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from 'src/app/interfaces/hero';
+import { Router } from '@angular/router';
+//import { Hero } from 'src/app/interfaces/hero';
+import { Hero } from 'src/app/models/hero';
 import { HeroService } from 'src/app/services/hero.service';
 
 @Component({
@@ -11,25 +13,35 @@ export class HeroesComponent implements OnInit {
 
 heroes: Hero[] = [];
 
-/*   heroForm: Hero;
+  heroForm: Hero;
   id: number;
-  name: string; */
+  name: string; 
 
-  constructor(private heroService: HeroService) { 
+  constructor(private heroService: HeroService, private router: Router) { 
 
   }
 
   ngOnInit(): void {
     this.getHeroes();
- /*    this.heroForm = new Hero(); */
+    this.heroForm = new Hero(); 
+    this.name = this.heroService.name; 
   }
 
+  onSubmit() {
+    this.heroService.addHero(this.heroForm).subscribe(data => {
+      this.getHeroes();
+      this.router.navigate(['heroes']);
+    })
+  }
 
   getHeroes(): void {
     this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
-  }
+  } 
 
-  add(name: string): void {
+
+  
+
+/*   add(name: string): void {
     name = name.trim();
     if(!name) {
       return;
@@ -37,7 +49,7 @@ heroes: Hero[] = [];
     this.heroService.addHero({ name } as Hero).subscribe(hero => {
       this.heroes.push(hero);
     });
-  }
+  } */
 
   delete(hero: Hero): void {
     this.heroes = this.heroes.filter(h => h !== hero);
