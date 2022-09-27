@@ -1,17 +1,19 @@
-<div *ngIf="hero">
-    <h2> {{hero.name | uppercase }} Details </h2>
-    <div>
-        id : {{ hero.id }}
-    </div>
-    <div>
-        <label for="hero-name"> Nom du héros : </label>
-        <input id="hero-name" [(ngModel)]="hero.name" placeholder="Nom">
-    </div>
+<div class="container">
+    <div *ngIf="hero" class="hero">
+        <button type="button" id="goBackBtn" (click)="goBack()">
+            Retour
+        </button>
+        <h2> Détails du chevalier {{hero.name | titlecase }}  </h2>
+        <div>
+            <h3> Identifiant du chevalier : {{ hero.id }} </h3>
+        </div>
+        <div class="update-chevalier">
+            <label for="hero-name"> Nom du chevalier : </label>
+            <input id="hero-name" [(ngModel)]="hero.name" placeholder="Nom">
+        </div>   
+        <button type="button" id="updateBtn" (click)="update()">
+            Sauvegarder les changements
+        </button>
 
+    </div>
 </div>
-<button type="button" (click)="update()">
-    Sauvegarder les changements
-</button>
-<button type="button" (click)="goBack()">
-    Go baaack
-</button>

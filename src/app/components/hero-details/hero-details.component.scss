@@ -1,22 +1,60 @@
-/* HeroDetailComponent's private CSS styles */
-label {
-    color: #435960;
-    font-weight: bold;
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero {
+  background-color: rgb(54, 57, 63);
+  width: 50%;
+  height: 30em;
+  padding: 2em;
+  margin-top: 5em;
+
+  h2, h3 {
+    text-align: center;
   }
-  input {
-    font-size: 1em;
-    padding: .5rem;
+  .update-chevalier {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    label {
+      display: inline-block;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      letter-spacing: 0.1em;
+    }
+    input {
+      margin: 2em auto;
+      font-size: 1em;
+      padding: .5rem;
+      min-width: 300px;
+      max-width: 400px;
+    }
   }
+  #updateBtn {
+    background-color: rgb(40, 167, 69);
+  }
+  #goBackBtn {
+    background-color: rgb(23, 162, 184);
+    float: right;
+  }
+}
+
   button {
     margin-top: 20px;
     margin-right: .5rem;
-    background-color: #eee;
+    cursor: pointer;
     padding: 1rem;
     border-radius: 4px;
     font-size: 1rem;
+    border: none;
+    float: right;
   }
   button:hover {
-    background-color: #cfd8dc;
+    opacity: .50;
   }
   button:disabled {
     background-color: #eee;
