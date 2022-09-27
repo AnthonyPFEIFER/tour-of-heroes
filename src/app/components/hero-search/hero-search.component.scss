@@ -1,46 +1,78 @@
 
-label {
-    display: block;
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    margin-bottom: .5rem;
-  
-  }
-  input {
-    padding: .5rem;
-    width: 100%;
+
+
+
+  #search-component {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em auto;
+    width: 40%;
     max-width: 600px;
-    box-sizing: border-box;
-    display: block;
+    //padding: 0 2em;
+    flex-direction: column;
+    label {
+      display: block;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      margin-bottom: .5rem;
+      font-size: larger;
+      letter-spacing: 0.1em; 
+    }
+    input {
+      padding: .5rem;
+      width: 100%;
+      
+      box-sizing: border-box;
+      display: block;
+    }
+    
+    input:focus {
+      outline: #336699 auto 1px;
+    }
+    .search-results {
+      width: 100%;
+      ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        li {
+          width: auto;
+          list-style-type: none;
+          background-color: white;
+          width: 100%;
+          a {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .search-result li a {
+      border-bottom: 1px solid gray;
+      border-left: 1px solid gray;
+      border-right: 1px solid gray;
+      display: inline-block;
+      width: 100%;
+      max-width: 600px;
+      padding: .5rem;
+      box-sizing: border-box;
+      text-decoration: none;
+      color: black;
+    }
+    
+    .search-result li a:hover {
+      background-color: #435A60;
+      color: white;
+    }
+    
+    ul.search-result {
+      margin-top: 0;
+      padding-left: 0;
+    }
   }
   
-  input:focus {
-    outline: #336699 auto 1px;
-  }
-  
-  li {
-    list-style-type: none;
-  }
-  .search-result li a {
-    border-bottom: 1px solid gray;
-    border-left: 1px solid gray;
-    border-right: 1px solid gray;
-    display: inline-block;
-    width: 100%;
-    max-width: 600px;
-    padding: .5rem;
-    box-sizing: border-box;
-    text-decoration: none;
-    color: black;
-  }
-  
-  .search-result li a:hover {
-    background-color: #435A60;
-    color: white;
-  }
-  
-  ul.search-result {
-    margin-top: 0;
-    padding-left: 0;
+  @keyframes lightning {
+    from{ background-color: #218838;}
+    to {background-color: #218838; opacity: .5 ;}
   }

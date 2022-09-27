@@ -35,7 +35,7 @@ export class HeroService {
 
   addHero(hero: Hero): Observable<Hero> {
     return this.http.post<Hero>(this.createHeroesUrl, hero).pipe(
-      tap(_ => this.log(`added hero ${this.id}`)),
+      tap(_ => this.log(`Ajout du chevalier ${this.id}`)),
       catchError(this.handleError<Hero>('addHero'))
     );
   }
@@ -43,7 +43,7 @@ export class HeroService {
   getHeroes (): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl)
       .pipe(
-        tap(heroes => this.log(`fetched heroes`)),
+        tap(heroes => this.log(`Récupération des chevaliers`)),
         catchError(this.handleError('getHeroes', []))
       );
   }
@@ -51,14 +51,14 @@ export class HeroService {
   getHero(id: number): Observable<Hero> {
     const heroUrl = `${this.heroesUrl}/${id}`;
     return this.http.get<Hero>(heroUrl).pipe(
-      tap(_ => this.log(`Fetched the hero ${id}`)),
+      tap(_ => this.log(`Récupération du chevalier ${id}`)),
       catchError(this.handleError<Hero>(`getHero id=${id}`))
     );
   }
   
   updateHero(hero: Hero, id: number) {
     return this.http.put<Hero>(this.editHeroesUrl + id, hero, this.httpOptions).pipe(
-      tap(_ => this.log(`updated hero ${hero.id}`)),
+      tap(_ => this.log(`Mise à jour du chevalier ${hero.id}`)),
       catchError(this.handleError<any>('updateHero'))
     );
   }
@@ -68,7 +68,7 @@ export class HeroService {
   deleteHero(id: number): Observable<Hero> {
     const delHeroUrl = `${this.heroesUrl}/${id}`;
     return this.http.delete<Hero>(this.deleteHeroesUrl + id, this.httpOptions).pipe(
-      tap(_ => this.log(`deleted hero ${id}`)),
+      tap(_ => this.log(`Suppression du chevalier ${id}`)),
       catchError(this.handleError<Hero>('deleteHero'))
     );
   }
@@ -80,8 +80,8 @@ export class HeroService {
 
     return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`).pipe(
       tap(x => x.length ?
-        this.log(`found heroes matching "${term}"`) :
-        this.log(`no heroes matching "${term}"`)),
+        this.log(`Chevaliers comportant le terme : "${term}"`) :
+        this.log(`Aucun chevalier ne comportant le terme : "${term}"`)),
      catchError(this.handleError<Hero[]>('searchHeroes', []))
    );
   }

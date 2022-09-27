@@ -1,75 +1,156 @@
-.heroes {
-  margin: 0 0 2em 0;
-  list-style-type: none;
-  padding: 0;
-  width: 15em;
-}
-
-.heroes li {
+h2, h3 {
   display: flex;
+  justify-content: center;
+  margin: 1em auto;
+  width: 50%;
 }
 
-.heroes button {
-  flex: 1;
-  cursor: pointer;
-  position: relative;
-  left: 0;
-  background-color: #EEE;
-  margin: .5em;
-  padding: 0;
-  border-radius: 4px;
+form {
   display: flex;
-  align-items: stretch;
-  height: 1.8em;
+  justify-content: center;
+  align-items: center;
+  margin: 1em auto;
+  width: 50%;
+  padding: 0 2em;
+  label {
+    font-size: larger;
+    letter-spacing: 0.1em; 
+  }
+  .submitBtn{
+    display: flex;    
+    flex-direction: row-reverse;
+    #submitBtn {
+      width: 40%;
+      color: whitesmoke;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      border: none;
+      border-radius: 30px;
+      
+      }
+    #submitBtn{
+      background-color: rgb(40, 167, 69);
+      
+    }
+    #submitBtn:hover {
+      color: #2c3a41;
+      background-color: #218838;
+      left: .1em;
+      cursor: pointer; 
+      animation: lightning 100ms;
+    }
+    #submitBtn:disabled{
+      opacity: .90 ;
+      cursor:not-allowed;
+    }
+  }
 }
 
-.heroes button:hover {
-  color: #2c3a41;
-  background-color: #e6e6e6;
-  left: .1em;
-}
-
-.heroes button:active {
-  background-color: #525252;
-  color: #fafafa;
-}
-
-.heroes button.selected {
-  background-color: black;
-  color: white;
-}
-
-.heroes button.selected:hover {
-  background-color: #505050;
-  color: white;
-}
-
-.heroes button.selected:active {
-  background-color: black;
-  color: white;
-}
-
-.heroes .badge {
-  display: inline-block;
-  font-size: small;
-  color: white;
-  padding: 0.8em 0.7em 0 0.7em;
-  background-color: #405061;
-  line-height: 1em;
-  margin-right: .8em;
-  border-radius: 4px 0 0 4px;
-}
-
-.heroes .name {
-  align-self: center;
+@keyframes lightning {
+  from{ background-color: #218838;}
+  to {background-color: #218838; opacity: .5 ;}
 }
 
 .heroes {
-  margin: 0 0 2em 0;
-  list-style-type: none;
+  margin: auto;
+  list-style-position: inside;
   padding: 0;
-  width: 15em;
 }
+.heroes-ul {
+  margin-bottom: 2em;
+  list-style-position: inside;
+  padding: 0 5em;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  
+
+  li {
+    list-style-position: inside;
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    .chevalier {
+      display: flex;
+          }
+      a {
+        background-color: #3f525c;
+        border-radius: 2px;
+        padding: 1rem;
+        font-size: 1.2rem;
+        text-decoration: none;
+        display: inline-block;
+        color: #fff;
+        text-align: center;
+        width: 25em;
+        min-width: 70px;
+        margin: .5rem auto;
+        box-sizing: border-box;
+      
+        /* flexbox */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      button {
+        flex: 1;
+        cursor: pointer;
+        position: relative;
+        left: 0;
+        background-color: #EEE;
+        margin: .5em;
+        padding: 0;
+        border-radius: 4px;
+        display: flex;
+        align-items: stretch;
+        height: 1.8em;
+      }
+      button:hover {
+        color: #2c3a41;
+        background-color: #e6e6e6;
+        left: .1em;
+      }
+      button:active {
+        background-color: #525252;
+        color: #fafafa;
+      }
+      button.selected {
+        background-color: black;
+        color: white;
+      }
+      button.selected:hover {
+        background-color: #505050;
+        color: white;
+      }
+      button.selected:active {
+        background-color: black;
+        color: white;
+      }
+
+
+      .id {
+        align-self: center;
+        padding-right: 2em;
+      }
+      .name {
+        align-self: center;
+      }
+
+      .delete {
+        background-color: rgb(220, 53, 69);
+        box-shadow: none;
+        border: none;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+  }
+}
+
 
 input {
   display: block;
@@ -79,77 +160,5 @@ input {
   box-sizing: border-box;
 }
 
-.heroes li {
-  position: relative;
-  cursor: pointer;
-}
 
-.heroes li:hover {
-  left: .1em;
-}
 
-.heroes a {
-  color: #333;
-  text-decoration: none;
-  background-color: #EEE;
-  margin: .5em;
-  padding: .3em 0;
-  height: 1.6em;
-  border-radius: 4px;
-  display: block;
-  width: 100%;
-}
-
-.heroes a:hover {
-  color: #2c3a41;
-  background-color: #e6e6e6;
-}
-
-.heroes a:active {
-  background-color: #525252;
-  color: #fafafa;
-}
-
-.heroes .badge {
-  display: inline-block;
-  font-size: small;
-  color: white;
-  padding: 0.8em 0.7em 0 0.7em;
-  background-color: #405061;
-  line-height: 1em;
-  position: relative;
-  left: -1px;
-  top: -4px;
-  height: 1.8em;
-  min-width: 16px;
-  text-align: right;
-  margin-right: .8em;
-  border-radius: 4px 0 0 4px;
-}
-
-.add-button {
- padding: .5rem 1.5rem;
- font-size: 1rem;
- margin-bottom: 2rem;
-}
-
-.add-button:hover {
-  color: white;
-  background-color: #42545C;
-}
-
-button.delete {
-  position: absolute;
-  left: 210px;
-  top: 5px;
-  background-color: white;
-  color:  #525252;
-  font-size: 1.1rem;
-  margin: 0;
-  padding: 1px 10px 3px 10px;
-}
-
-button.delete:hover {
-  background-color: #525252;
-  color: white;
-}

@@ -1,33 +1,28 @@
-<h2> Mes héros </h2>
-<!-- <div>
-    <label for ="new-hero"> Hero's name : </label>
-    <input id="new-hero" #heroName />
-
-    <button type="button" class="add-button" (click)="add(heroName.value); heroName.value=''">
-        Add a Hero
-    </button>
-</div>
- -->
+<h2> Liste des chevaliers </h2>
 
  <form #validationHero="ngForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-        <label for="name">Veuillez saisir un nom de héros. </label>
+        <label for="name">Veuillez saisir un nom de chevalier. </label>
         <input type="text" class="form-control" id="name" name="name" required
             [(ngModel)]="heroForm.name" #name="ngModel">
-    </div>
-    <div>
-        <input id="submitBtn" type="submit" [disabled]="!validationHero.valid">
+            <div class="submitBtn">
+                <input id="submitBtn" type="submit" [disabled]="!validationHero.valid">
+            </div>
     </div>
  </form>
 
 
 <ul class="heroes">
-    <li *ngFor="let hero of heroes">
-        <a routerLink="/hero-details/{{hero.id}}">
-            <span class="badge"> {{hero.id}} </span> {{hero.name}}
-        </a>
-        <button type="button" class="delete" title="delete-hero" (click)="delete(hero)">
-            Delete
-        </button>
-    </li>
+    <div class="heroes-ul">
+        <li *ngFor="let hero of heroes">
+            <div class="chevalier" >
+                <a routerLink="/hero-details/{{hero.id}}">
+                    <span class="id" > {{hero.id}} </span> <span class="name">{{hero.name}}</span>
+                </a>
+                <button type="button" class="delete" title="delete-hero" (click)="delete(hero)">
+                    X
+                </button>
+            </div>
+        </li>
+    </div>
 </ul>

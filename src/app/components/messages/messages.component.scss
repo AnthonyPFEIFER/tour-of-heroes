@@ -1,18 +1,47 @@
-h2 {
-    color: #A80000;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: lighter;
-  }
-  
-  .clear {
-    color: #333;
-    background-color: #eee;
-    margin-bottom: 12px;
-    padding: 1rem;
-    border-radius: 4px;
-    font-size: 1rem;
-  }
-  .clear:hover {
-    color: white;
-    background-color: #42545C;
+  .messages-box {
+    display: flex;
+    justify-content: flex-end;
+    margin: 6em 0 5em 0;
+    flex-direction: column;
+    width: 20em;
+    h2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(220, 53, 69);
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: lighter;
+      
+      height: 2em;
+    }
+    .messages {
+      width: 20em;
+    }
+    div {
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      margin: 2em 0 4em 0;
+    }
+    .clear-box {
+      display: flex;
+      justify-content: flex-end;
+    }
+    
+    .clear {
+      border: none;
+      color: white;
+      font-weight: bold;
+      background-color: rgb(23, 162, 184);
+      margin-bottom: 12px;
+      padding: 1rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      width: 50%;
+      cursor: pointer;
+    }
+    .clear:hover {
+      color: white;
+      background-color: rgb(23, 162, 184);
+      opacity: .90;
+    }
   }
