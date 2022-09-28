@@ -71,7 +71,7 @@ form {
   li {
     list-style-position: inside;
     display: flex;
-    width: 30%;
+    width: 33%;
     flex-direction: column;
     .chevalier {
       display: flex;
@@ -148,6 +148,8 @@ form {
         display: flex;
         justify-content: center;
         align-items: center;
+        min-width: 2em;
+        height: 2em;
       }
   }
 }
@@ -162,4 +164,10 @@ input {
 }
 
 
-
+.toastSuccessClass{
+  background-color: rgb(40, 167, 69);
+/*   font-weight: bold;
+  width: 5em;
+  height: 2.5em;
+  border-radius: 25px; */
+}

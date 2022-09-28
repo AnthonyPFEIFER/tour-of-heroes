@@ -11,7 +11,7 @@
   padding: 2em;
   margin-top: 5em;
 
-  h2, h3 {
+  h2, h3, h4, h5 {
     text-align: center;
   }
   .update-chevalier {
@@ -23,6 +23,7 @@
       display: inline-block;
       color: white;
       font-weight: bold;
+      font-size:xx-large;
       text-align: center;
       letter-spacing: 0.1em;
     }
@@ -37,9 +38,16 @@
   #updateBtn {
     background-color: rgb(40, 167, 69);
   }
-  #goBackBtn {
-    background-color: rgb(23, 162, 184);
-    float: right;
+  .container-button-goback{
+    position: relative;
+    height: 5em;
+    #goBackBtn {
+      background-color: rgb(23, 162, 184);
+      position:absolute;
+      margin: 0;
+      top: 0;
+      right: 0;
+      }
   }
 }
 

@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Hero } from 'src/app/interfaces/hero';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 import { HeroService } from '../../services/hero.service';
 @Component({
@@ -13,7 +14,7 @@ export class HeroDetailsComponent implements OnInit {
 
   @Input() hero?: Hero;
 
-  constructor(private route: ActivatedRoute, private heroService: HeroService, private location: Location) { }
+  constructor(private route: ActivatedRoute, private heroService: HeroService, private location: Location, private router: Router) { }
 
   ngOnInit(): void {
     this.getHero();
@@ -31,5 +32,13 @@ export class HeroDetailsComponent implements OnInit {
   }
   goBack(): void {
     this.location.back();
+/*     this.router.navigate(['/heroes']).then(() => {
+      window.location.reload();
+    }); */
+  }
+  delete(hero: Hero): void {
+    this.heroService.deleteHero(hero.id).subscribe();
+    this.goBack();
+
   }
 }

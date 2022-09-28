@@ -1,16 +1,22 @@
 <div class="container">
+
     <div *ngIf="hero" class="hero">
-        <button type="button" id="goBackBtn" (click)="goBack()">
-            Retour
-        </button>
+        <div class="container-button-goback">
+            <button type="button" id="goBackBtn" (click)="goBack()">
+                Retour
+            </button>
+        </div>
         <h2> Détails du chevalier {{hero.name | titlecase }}  </h2>
         <div>
-            <h3> Identifiant du chevalier : {{ hero.id }} </h3>
+            <h4> Identifiant du chevalier : {{ hero.id }} </h4>
         </div>
         <div class="update-chevalier">
             <label for="hero-name"> Nom du chevalier : </label>
             <input id="hero-name" [(ngModel)]="hero.name" placeholder="Nom">
         </div>   
+        <button type="button" class="delete" title="delete-hero" (click)="delete(hero)">
+            X
+        </button>
         <button type="button" id="updateBtn" (click)="update()">
             Sauvegarder les changements
         </button>
